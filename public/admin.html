@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | CampusConnect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="admin" data-protected="true" data-admin="true">
+    <header class="navbar">
+        <a class="brand" href="dashboard.html">Campus<span>Connect</span></a>
+        <nav>
+            <a href="dashboard.html">Student Portal</a>
+            <button class="btn btn-outline" data-logout type="button">Logout</button>
+        </nav>
+    </header>
+
+    <main class="page-container">
+        <section class="page-heading">
+            <p class="eyebrow">ADMINISTRATION</p>
+            <h1>Admin dashboard</h1>
+            <p class="muted">Monitor complaints and publish campus notices.</p>
+        </section>
+
+        <section class="stats-grid">
+            <article class="stat-card"><p>Total Complaints</p><h2 id="adminTotal">—</h2></article>
+            <article class="stat-card"><p>Pending</p><h2 id="adminPending">—</h2></article>
+            <article class="stat-card"><p>Resolved</p><h2 id="adminResolved">—</h2></article>
+        </section>
+
+        <section class="panel">
+            <h2>Manage complaints</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Complaint</th>
+                            <th>Category</th>
+                            <th>Location</th>
+                            <th>Status</th>
+                            <th>Update status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminComplaintList">
+                        <tr><td colspan="5">Loading complaints...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p id="adminComplaintMessage" class="message" role="status"></p>
+        </section>
+
+        <section class="panel">
+            <h2>Publish an announcement</h2>
+            <form id="announcementForm">
+                <label for="announcementTitle">Title</label>
+                <input id="announcementTitle" name="title" type="text"
+                       maxlength="150" required>
+
+                <label for="announcementBody">Announcement details</label>
+                <textarea id="announcementBody" name="body" rows="5"
+                          maxlength="4000" required></textarea>
+
+                <label for="announcementPriority">Priority</label>
+                <select id="announcementPriority" name="priority">
+                    <option value="Normal">Normal</option>
+                    <option value="Important">Important</option>
+                    <option value="Urgent">Urgent</option>
+                </select>
+
+                <button class="btn btn-primary" type="submit">Publish Notice</button>
+            </form>
+            <p id="adminAnnouncementMessage" class="message" role="status"></p>
+        </section>
+    </main>
+
+    <script src="app.js" defer></script>
+</body>
+</html>

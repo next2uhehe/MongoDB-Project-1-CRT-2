@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | CampusConnect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="auth">
+    <header class="navbar">
+        <a class="brand" href="index.html">Campus<span>Connect</span></a>
+        <a href="index.html">Back to Home</a>
+    </header>
+
+    <main class="auth-layout">
+        <section class="auth-card">
+            <div class="tab-switch">
+                <button id="loginTab" class="tab active" type="button">Login</button>
+                <button id="registerTab" class="tab" type="button">Register</button>
+            </div>
+
+            <div id="loginPanel">
+                <h1>Welcome back</h1>
+                <p class="muted">Sign in to your CampusConnect account.</p>
+                <form id="loginForm">
+                    <label for="loginEmail">Email address</label>
+                    <input id="loginEmail" name="email" type="email"
+                           placeholder="you@example.com" autocomplete="email" required>
+
+                    <label for="loginPassword">Password</label>
+                    <input id="loginPassword" name="password" type="password"
+                           placeholder="Enter your password"
+                           autocomplete="current-password" required>
+
+                    <button class="btn btn-primary full-width" type="submit">Sign In</button>
+                </form>
+            </div>
+
+            <div id="registerPanel" hidden>
+                <h1>Create account</h1>
+                <p class="muted">Register to access campus services.</p>
+                <form id="registerForm">
+                    <label for="registerName">Full name</label>
+                    <input id="registerName" name="name" type="text"
+                           placeholder="Your full name" autocomplete="name" required>
+
+                    <label for="registerEmail">College email</label>
+                    <input id="registerEmail" name="email" type="email"
+                           placeholder="you@example.com" autocomplete="email" required>
+
+                    <label for="registerStudentId">Student ID</label>
+                    <input id="registerStudentId" name="studentId" type="text"
+                           placeholder="Your college ID" required>
+
+                    <label for="registerDepartment">Department</label>
+                    <input id="registerDepartment" name="department" type="text"
+                           placeholder="e.g. AI & Data Science" required>
+
+                    <label for="registerPassword">Password</label>
+                    <input id="registerPassword" name="password" type="password"
+                           placeholder="At least 8 characters"
+                           minlength="8" autocomplete="new-password" required>
+
+                    <button class="btn btn-primary full-width" type="submit">Create Account</button>
+                </form>
+            </div>
+
+            <p id="authMessage" class="message" role="status"></p>
+        </section>
+    </main>
+
+    <script src="app.js" defer></script>
+</body>
+</html>

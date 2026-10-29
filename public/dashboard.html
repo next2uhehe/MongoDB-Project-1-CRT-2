@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | CampusConnect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="dashboard" data-protected="true">
+    <header class="navbar">
+        <a class="brand" href="dashboard.html">Campus<span>Connect</span></a>
+        <nav>
+            <a href="complaints.html">Complaints</a>
+            <a href="announcements.html">Announcements</a>
+            <button class="btn btn-outline" data-logout type="button">Logout</button>
+        </nav>
+    </header>
+
+    <main class="page-container">
+        <section class="page-heading">
+            <p class="eyebrow">STUDENT PORTAL</p>
+            <h1>Welcome, <span id="studentName">Student</span></h1>
+            <p class="muted">Here is an overview of your campus activity.</p>
+        </section>
+
+        <section class="stats-grid">
+            <article class="stat-card">
+                <p>Total Complaints</p>
+                <h2 id="totalComplaints">—</h2>
+            </article>
+            <article class="stat-card">
+                <p>Pending</p>
+                <h2 id="pendingComplaints">—</h2>
+            </article>
+            <article class="stat-card">
+                <p>Resolved</p>
+                <h2 id="resolvedComplaints">—</h2>
+            </article>
+        </section>
+
+        <section class="content-grid">
+            <article class="panel">
+                <h2>Quick actions</h2>
+                <p class="muted">Access the services you need.</p>
+                <div class="quick-links">
+                    <a class="quick-link" href="complaints.html">
+                        <strong>Submit a complaint</strong>
+                        <span>Report a campus issue →</span>
+                    </a>
+                    <a class="quick-link" href="announcements.html">
+                        <strong>Campus announcements</strong>
+                        <span>Read the latest notices →</span>
+                    </a>
+                </div>
+            </article>
+
+            <article class="panel">
+                <h2>Recent complaints</h2>
+                <div id="recentComplaints" class="stack">
+                    <p class="muted">Loading complaints...</p>
+                </div>
+            </article>
+        </section>
+
+        <p id="dashboardMessage" class="message" role="status"></p>
+    </main>
+
+    <script src="app.js" defer></script>
+</body>
+</html>

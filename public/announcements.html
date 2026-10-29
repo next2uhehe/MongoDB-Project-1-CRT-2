@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements | CampusConnect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="announcements" data-protected="true">
+    <header class="navbar">
+        <a class="brand" href="dashboard.html">Campus<span>Connect</span></a>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="complaints.html">Complaints</a>
+            <button class="btn btn-outline" data-logout type="button">Logout</button>
+        </nav>
+    </header>
+
+    <main class="page-container">
+        <section class="page-heading">
+            <p class="eyebrow">CAMPUS UPDATES</p>
+            <h1>Announcements</h1>
+            <p class="muted">Important notices and updates from your campus.</p>
+        </section>
+
+        <section class="panel">
+            <div id="announcementList" class="announcement-list">
+                <p class="muted">Loading announcements...</p>
+            </div>
+        </section>
+
+        <p id="announcementMessage" class="message" role="status"></p>
+    </main>
+
+    <script src="app.js" defer></script>
+</body>
+</html>

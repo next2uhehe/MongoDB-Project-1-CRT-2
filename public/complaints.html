@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaints | CampusConnect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="complaints" data-protected="true">
+    <header class="navbar">
+        <a class="brand" href="dashboard.html">Campus<span>Connect</span></a>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="announcements.html">Announcements</a>
+            <button class="btn btn-outline" data-logout type="button">Logout</button>
+        </nav>
+    </header>
+
+    <main class="page-container">
+        <section class="page-heading">
+            <p class="eyebrow">STUDENT SERVICES</p>
+            <h1>Campus complaints</h1>
+            <p class="muted">Submit an issue and track its progress.</p>
+        </section>
+
+        <section class="content-grid">
+            <article class="panel">
+                <h2>Submit a complaint</h2>
+                <form id="complaintForm">
+                    <label for="complaintTitle">Complaint title</label>
+                    <input id="complaintTitle" name="title" type="text"
+                           maxlength="120" placeholder="e.g. Broken classroom fan" required>
+
+                    <label for="complaintCategory">Category</label>
+                    <select id="complaintCategory" name="category" required>
+                        <option value="">Select a category</option>
+                        <option value="Hostel">Hostel</option>
+                        <option value="Classroom">Classroom</option>
+                        <option value="Laboratory">Laboratory</option>
+                        <option value="Library">Library</option>
+                        <option value="Cleanliness">Cleanliness</option>
+                        <option value="Electricity">Electricity</option>
+                        <option value="Water">Water</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <label for="complaintLocation">Location</label>
+                    <input id="complaintLocation" name="location" type="text"
+                           maxlength="150" placeholder="Building, room, or area" required>
+
+                    <label for="complaintDescription">Description</label>
+                    <textarea id="complaintDescription" name="description"
+                              rows="5" maxlength="2000"
+                              placeholder="Explain the issue clearly..." required></textarea>
+
+                    <button class="btn btn-primary" type="submit">Submit Complaint</button>
+                </form>
+                <p id="complaintMessage" class="message" role="status"></p>
+            </article>
+
+            <article class="panel">
+                <h2>My complaints</h2>
+                <div id="complaintList" class="stack">
+                    <p class="muted">Loading complaints...</p>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
